@@ -1,0 +1,99 @@
+.App {
+  text-align: center;
+}
+
+.App-container {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #282C34;
+}
+
+.TodoInputWrapper {
+  display: flex;
+  width: 25rem;
+  height: 2.5rem;
+}
+
+.TodoInput {
+  border-radius: 0.3rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border: none;
+  width: 90%;
+  height: 100%;
+  font-size: 1.5rem;
+}
+
+.Todos {
+  border-radius: 0.3rem;
+  width: 25rem;
+  padding: 0;
+}
+
+.Todos ul {
+  list-style: none;
+  padding: 0;
+}
+
+.TodoWrapper {
+  display: flex;
+  width: 25rem;
+  height: 2.5rem;
+  margin: 0.3rem 0;
+}
+
+.Todo {
+  padding: 0.5rem;
+  width: 90%;
+  color: white;
+  height: 2.5rem;
+  border-radius: 0.3rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  cursor: pointer;
+}
+
+.incomplete {
+  background: rgb(236, 236, 217);
+  color: black;
+}
+
+.incomplete:hover {
+  background: rgb(219, 219, 203);
+}
+
+.completed,
+.addBtn {
+  background: rgb(94, 212, 84);
+}
+
+.completed:hover,
+.addBtn:hover {
+  background: rgb(65, 212, 52);
+}
+
+.deleteBtn {
+  background: rgb(206, 35, 29);
+}
+
+.deleteBtn:hover {
+  background: rgb(190, 24, 19);
+}
+
+.Button {
+  height: 100%;
+  width: 10%;
+  outline: none;
+  border: none;
+  border-radius: 0.3rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  cursor: pointer;
+  color: white;
+  font-size: 1.5rem;
+}
