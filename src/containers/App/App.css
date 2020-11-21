@@ -48,7 +48,7 @@
 }
 
 .Todo {
-  padding: 0.5rem;
+  padding: 0.4rem;
   width: 90%;
   color: white;
   height: 2.5rem;
@@ -56,6 +56,7 @@
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   cursor: pointer;
+  font-size: 1.2rem;
 }
 
 .incomplete {
