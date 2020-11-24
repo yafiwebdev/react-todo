@@ -8,14 +8,21 @@ import './App.css';
 class App extends Component {
 
   state = {
-    todos: [
-      {text: 'Do this', completed: false},
-      {text: 'Do that', completed: true},
-      {text: 'Do something', completed: true},
-      {text: 'Do nothing', completed: false},
-    ]
+    todos: []
   };
 
+  updateTodos = todos => {
+
+    this.setState({ todos });
+
+    if(todos.length > 0) {
+
+      localStorage.setItem('todos', JSON.stringify(todos));
+
+    } else {
+      localStorage.clear();
+    }
+  }
 
   addTodo = todo => {
     if(todo === '') return;
@@ -23,18 +30,14 @@ class App extends Component {
     let newTodo = { text:todo, completed: false };
     let updatedTodos = [...this.state.todos, newTodo];
 
-    this.setState({
-      todos: updatedTodos
-    });
+    this.updateTodos(updatedTodos);
   }
 
   deleteTodo = id => {
     let todos = [...this.state.todos];
     todos.splice(id, 1);
 
-    this.setState({
-      todos: todos
-    });
+    this.updateTodos(todos);
   }
 
   toggleStatus = todoIndex => {
@@ -44,9 +47,15 @@ class App extends Component {
     todo.completed = !todo.completed;
     todos[todoIndex] = todo;
 
-    this.setState({
-      todos: todos
-    });
+    this.updateTodos(todos);
+  }
+
+  componentDidMount() {
+
+    const todos = JSON.parse(localStorage.getItem('todos'));
+
+    if(todos) this.setState({ todos });
+
   }
 
   render() {
